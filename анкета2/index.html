@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="surveyForm">
+            <h3>Анкета</h3>
+
+            <!-- Поле для имени -->
+            <label for="name">Аты-Жону:</label>
+            <input type="text" id="name" class="field" placeholder="Менин Атым" required><br><br>
+
+            <!-- Поле для имени родителя -->
+            <label for="parentName">Сенин ата-энендин аты:</label>
+            <input type="text" id="parentName" class="field" placeholder="Сенин ата-энендин аты" required><br><br>
+
+            <!-- Радио кнопки для возраста -->
+            <p>Жаш:</p>
+            <label><input type="radio" name="age" value="15-20"> 15-20</label><br>
+            <label><input type="radio" name="age" value="20-25"> 20-25</label><br>
+            <label><input type="radio" name="age" value="25-30+"> 25-30+</label><br><br>
+
+            <!-- Поле для email -->
+            <label for="email">Email почта:</label>
+            <input type="email" id="email" class="field" placeholder="Email почта" required><br><br>
+
+            <!-- Поле для пароля -->
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" class="field" placeholder="Пароль" required><br><br>
+
+            <!-- Выпадающий список для места жительства -->
+            <p>Жашаган жерин:</p>
+            <select id="location" required>
+                <option value="">Выберите город</option>
+                <option value="Bishkek">Bishkek</option>
+                <option value="Chuy">Chuy</option>
+                <option value="Osh">Osh</option>
+                <option value="IS">IS</option>
+                <option value="Naryn">Naryn</option>
+                <option value="Talas">Talas</option>
+                <option value="Jalal-Abad">Jalal-Abad</option>
+            </select><br><br>
+
+            <!-- Чекбоксы для выбора технологий -->
+            <p>Кайсы болумдордо окугун келет:</p>
+            <label><input type="checkbox" name="tech" value="HTML"> HTML</label><br>
+            <label><input type="checkbox" name="tech" value="CSS"> CSS</label><br>
+            <label><input type="checkbox" name="tech" value="JS"> JS</label><br>
+            <label><input type="checkbox" name="tech" value="Python"> Python</label><br><br>
+
+            <!-- Поле для загрузки файла -->
+            <label for="file">Загрузите файл:</label>
+            <input type="file" id="file" class="field"><br><br>
+
+            <!-- Поле для телефона -->
+            <label for="phone">Сенин телефон номерин:</label>
+            <input type="tel" id="phone" class="field" placeholder="+996" required><br><br>
+
+            <!-- Кнопка отправки -->
+            <button type="submit">Отправить</button>
+        </form>
+
+        <script>
+            document.getElementById('surveyForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Останавливаем стандартное поведение отправки формы
+
+                // Получаем значения полей
+                const name = document.getElementById('name').value;
+                const parentName = document.getElementById('parentName').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+
+                // Минимальная проверка заполнения полей
+                if (name && parentName && email && phone) {
+                    // Все поля заполнены, перенаправляем на другую страницу
+                    window.location.href = "https://www.instagram.com/okurmen_it/"; // Замените на нужный URL
+                } else {
+                    alert("Пожалуйста, заполните все поля!");
+                }
+            });
+        </script>
+    </div>
+</body>
+</html>

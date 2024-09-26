@@ -1,0 +1,14 @@
+.container{
+    width: 600px;
+    margin: 0 auto;
+}
+form{
+    border: 2px solid black;
+    padding: 5px;
+}
+.field{
+    width: 95%;
+}
+.for{
+    width: 40%;
+}
